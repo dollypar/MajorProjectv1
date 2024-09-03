@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+.memory-game-container {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  overflow-y: hidden;
+  position: relative; /* To position overlay if needed */
+  background-image: url('/Images/Bg1.jpg'); /* Default background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.memory-game-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Slightly darken the background */
+  z-index: -1; /* Place behind the content */
+}
+
+.game-title {
+  font-family: 'Lilita One', cursive;
+  font-size: 3.5rem; /* Increased size */
+  color: #000000; /* Very dark black */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 6px #ffffff; /* White shadow for better readability */
+}
+
+.game-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  flex-grow: 1;
+  z-index: 1; /* To place above the background overlay */
+}
+
+.words-container, .images-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adjust gap for better fit */
+  z-index: 1;
+}
+
+.word-button, .image-button {
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: #3498db; /* Blue for buttons */
+  color: #ffffff; /* White text for contrast */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 120px;
+}
+
+.word-button.selected, .image-button.selected {
+  background-color: #2980b9; /* Slightly darker blue for selection */
+}
+
+.image-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.word-button.matched, .image-button.matched {
+  background-color: #2ecc71; /* Green for matched */
+}
+
+.game-status {
+  margin-top: 15px;
+  padding: 5px;
+  background-color: #34495e; /* Darker gray for status */
+  color: #ffffff; /* White text for contrast */
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  font-size: 1.5rem; /* Increased size */
+  font-family: 'Lilita One', cursive; /* Use Lilita One font */
+}
+
+.start-button, .submit-button, .restart-button, .next-button, .previous-button, .restart-to-first-button {
+  padding: 12px 25px;
+  font-size: 1.5rem;
+  background-color: #2980b9; /* Blue for buttons */
+  color: #ffffff; /* White text for contrast */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.start-button:hover, .submit-button:hover, .restart-button:hover, .next-button:hover, .previous-button:hover, .restart-to-first-button:hover {
+  background-color: #3498db; /* Lighter blue for hover effect */
+}
+
+.restart-button, .next-button, .restart-to-first-button {
+  background-color: #e67e22; /* Orange for Restart and Next buttons */
+}
+
+.restart-button:hover, .next-button:hover, .restart-to-first-button:hover {
+  background-color: #f39c12; /* Lighter orange for hover effect */
+}
+
+.previous-button {
+  background-color: #8e44ad; /* Purple for Previous Quiz button */
+}
+
+.previous-button:hover {
+  background-color: #9b59b6; /* Lighter purple for hover effect */
+}
+
+/* New Styles for Restart This Quiz Button */
+.restart-this-quiz-button {
+  padding: 12px 25px;
+  font-size: 1.5rem;
+  background-color: #e74c3c; /* Red for Restart This Quiz button */
+  color: #ffffff; /* White text for contrast */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.restart-this-quiz-button:hover {
+  background-color: #c0392b; /* Darker red for hover effect */
+}
+
+.final-score {
+  text-align: center;
+  z-index: 1;
+}
+
+.final-score h2 {
+  font-family: 'Lilita One', cursive;
+  font-size: 2.5rem; /* Increased size */
+  color: #000000; /* Very dark black */
+  margin-bottom: 10px;
+}
+
+.final-score p {
+  font-size: 1.5rem; /* Increased size */
+  color: #000000; /* Very dark black */
+  margin-bottom: 5px;
+  font-weight: bold; /* Bold text */
+}
